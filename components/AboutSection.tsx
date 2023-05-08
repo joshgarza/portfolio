@@ -52,7 +52,7 @@ export const AboutSection = () => {
             <br />
             <p>
               My diverse interests have led me to excel in various fields. From
-              playing classical guitar, managing a gym, powerlifting, to
+              playing classical guitar, managing a gym, and powerlifting, to
               building full-stack web applications, I am always eager to explore
               new experiences and continually learn and grow.
             </p>
