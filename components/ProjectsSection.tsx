@@ -13,7 +13,7 @@ const projects = [
     width: 1000,
     height: 1000,
     github: "https://github.com/joshgarza/MVP",
-    link: "https://www.strengthtrainer.app/",
+    link: "https://www.strengthtrainer.app/login",
   },
   {
     name: "Braking Friendships: Exploding Kittens Online",
