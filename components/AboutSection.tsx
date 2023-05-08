@@ -37,28 +37,33 @@ export const AboutSection = () => {
             <p>
               {" "}
               Hi, my name is Josh and I am a{" "}
-              <span className="font-bold">{"highly ambitious"}</span>,
+              <span className="font-bold">{"highly adaptable"}</span>,
               <span className="font-bold">{" self-motivated"}</span>, and
-              <span className="font-bold">{" driven"}</span> software engineer
-              based in the San Francisco Bay Area.
-            </p>
-            <br />
-            <p>I graduated from Hack Reactor in December 2022.</p>
-            <br />
-            <p>
-              I have a wide range of interests that keep me active. From
-              cooking, dancing salsa, powerlifting, to building my next project,
-              I am always looking for novel experiences and love to keep myself
-              engaged and learning new things.
+              <span className="font-bold">{" growth-oriented"}</span> software
+              engineer based in the San Francisco Bay Area.
             </p>
             <br />
             <p>
-              I believe that you should{" "}
+              I graduated from Hack Reactor in December 2022 and have a
+              background in music and fitness, having studied classical guitar
+              at the San Francisco Conservatory of Music and owned a successful
+              gym in San Francisco.
+            </p>
+            <br />
+            <p>
+              My diverse interests have led me to excel in various fields. From
+              playing classical guitar, managing a gym, powerlifting, to
+              building full-stack web applications, I am always eager to explore
+              new experiences and continually learn and grow.
+            </p>
+            <br />
+            <p>
+              I believe in the power of{" "}
               <span className="font-bold text-teal-500">
-                never stop growing
+                continuous improvement
               </span>{" "}
               {
-                "and that's what I strive to do. I have a passion for technology and a persistent desire to always push the limits of what is possible. I am excited to see where my career takes me and am always open to new opportunities."
+                "and strive to develop my skills and knowledge in all aspects of my life. With a strong passion for technology and a drive to push the limits of what's possible, I am excited about the future of my career and am always open to new opportunities and challenges."
               }
             </p>
           </div>
