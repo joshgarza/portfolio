@@ -8,26 +8,32 @@ const projects = [
   {
     name: "Strengthtrainer.app",
     description:
-      "Strengthtrainer.app is a web app that connects strength coaches and their clients that allows for tracking long term progress",
-    image: "/placeholder-square.jpeg",
+      "Strengthtrainer.app is a web app that connects strength coaches and their clients, enabling seamless tracking of long-term progress and enhancing the coaching experience.",
+    image: "/strengthtrainer-landscape.png",
+    width: 1000,
+    height: 1000,
     github: "https://github.com/joshgarza/MVP",
     link: "https://www.strengthtrainer.app/",
   },
   {
-    name: "Strengthtrainer.app",
+    name: "Braking Friendships: Exploding Kittens Online",
     description:
-      "Strengthtrainer.app is a web app that connects strength coaches and their clients that allows for tracking long term progress",
-    image: "/placeholder-square.jpeg",
-    github: "https://github.com/joshgarza/MVP",
-    link: "https://www.strengthtrainer.app/",
+      "An engaging web application that brings the popular card game Exploding Kittens to the digital realm, providing a fun and interactive online experience for players.",
+    image: "/exploding-kittens.gif",
+    width: 1000,
+    height: 1000,
+    github: "https://github.com/Braking-Friendships/blueocean",
+    link: null,
   },
   {
-    name: "Strengthtrainer.app",
+    name: "Atelier Mais",
     description:
-      "Strengthtrainer.app is a web app that connects strength coaches and their clients that allows for tracking long term progress",
-    image: "/placeholder-square.jpeg",
-    github: "https://github.com/joshgarza/MVP",
-    link: "https://www.strengthtrainer.app/",
+      "Atelier Mais is a front-end implementation of an eCommerce product page, skillfully designed to meet project stakeholders' specifications and requirements while seamlessly integrating with a client-provided API.",
+    image: "/atelier-mais.png",
+    width: 1000,
+    height: 1000,
+    github: "https://github.com/joshgarza/Atelier-Mais",
+    link: null,
   },
 ];
 
@@ -44,35 +50,44 @@ export const ProjectsSection = () => {
             <div key={idx}>
               <SlideUp offset="-300px 0px -300px 0px">
                 <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
-                  <div className="mt-8 md:w-1/2">
-                    <Link href={project.link} target="_blank">
+                  <div className="flex items-center justify-center mt-8 md:w-1/2">
+                    <Link
+                      href={project.link ? project.link : project.github}
+                      target="_blank"
+                    >
                       <Image
                         src={project.image}
                         alt=""
-                        width={1000}
-                        height={1000}
+                        width={project.width}
+                        height={project.height}
                         className="rounded-xl shadow-xl hover:opacity-70"
                       />
                     </Link>
                   </div>
                   <div className="mt-12 md:w-1/2">
-                    <h1 className="text-4xl font-bold mb-6">{project.name}</h1>
-                    <p className="text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400">
+                    <h1 className="mx-2 text-4xl font-bold mb-6 md:mx-0">
+                      {project.name}
+                    </h1>
+                    <p className="mx-2 text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400 md:mx-0">
                       {project.description}
                     </p>
-                    <div className="flex flex-row align-bottom space-x-4">
+                    <div className="flex flex-row align-bottom space-x-4 mx-2 md:mx-0">
                       <Link href={project.github} target="_blank">
                         <BsGithub
                           size={30}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"
                         />
                       </Link>
-                      <Link href={project.link} target="_blank">
-                        <BsArrowUpRightSquare
-                          size={30}
-                          className="hover:-translate-y-1 transition-transform cursor-pointer"
-                        />
-                      </Link>
+                      {project.link ? (
+                        <Link href={project.link} target="_blank">
+                          <BsArrowUpRightSquare
+                            size={30}
+                            className="hover:-translate-y-1 transition-transform cursor-pointer"
+                          />
+                        </Link>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </div>
                 </div>
