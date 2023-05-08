@@ -2,11 +2,12 @@
 import { useState } from "react";
 import axios from "axios";
 import "../styles/globals.css";
+import { HeroSection } from "@/components/HeroSection";
 
 export default function Home() {
   return (
-    <main className="">
-      <h1 className="text-4xl">hello, app!</h1>
+    <main className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
+      <HeroSection />
     </main>
   );
 }
