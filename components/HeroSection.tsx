@@ -1,10 +1,51 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import axios from "axios";
 import { Link } from "react-scroll";
 import { HiArrowDown } from "react-icons/hi";
+import { AiOutlineSend } from "react-icons/ai";
+import { LoadingSpinner } from "./LoadingSpinner";
 
 export const HeroSection = () => {
+  const [input, setInput] = useState("");
+  const [response, setResponse] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = () => {
+    const data = {
+      query: input,
+    };
+    setLoading(true);
+    axios
+      .post("https://askai-f9ii.onrender.com/ask", data)
+      .then((res) => {
+        setResponse(res.data.response);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setResponse("Error, bad request.");
+        setLoading(false);
+      });
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
+  };
+
+  const autoGrow = (element: HTMLTextAreaElement) => {
+    element.style.height = "auto";
+    element.style.height = element.scrollHeight + "px";
+  };
+
   return (
     <section id="home">
       <div className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:flex-row md:space-x-4 md:text-left md:py-52">
@@ -28,17 +69,39 @@ export const HeroSection = () => {
             </span>
             {"based in the San Francisco Bay Area in California."}
           </p>
-          <Link
-            to="projects"
-            className="cursor-pointer text-neutral-100 font-semibold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700"
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
-          >
-            Projects
-          </Link>
+          <div className="space-y-4">
+            <div className="space-y-4">
+              <p className="font-semibold">
+                Want to know more about me? Ask my AI concierge anything {":)"}
+              </p>
+              <div className="flex flex-row space-x-4">
+                <form
+                  className="flex flex-row items-center w-full space-x-4"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    handleSubmit();
+                  }}
+                >
+                  <textarea
+                    rows={1}
+                    className="border shadow flex-grow resize-none overflow-hidden px-2"
+                    onChange={(e) => {
+                      handleChange(e);
+                      autoGrow(e.target);
+                    }}
+                    onKeyDown={(e) => handleKeyDown(e)}
+                  ></textarea>
+
+                  <button onClick={handleSubmit}>
+                    {<AiOutlineSend size={30} />}
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div className="">
+              <span>{loading ? <LoadingSpinner /> : response}</span>
+            </div>
+          </div>
         </div>
       </div>
       <div className="flex flex-row justify-center">
