@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Navbar from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "next-themes";
 
 interface RootLayoutProps {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider attribute="class">
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
