@@ -50,7 +50,7 @@ export const HeroSection = () => {
 
   return (
     <section id="home">
-      <div className="flex flex-col text-center items-start justify-center my-10 py-16 sm:py-32 md:flex-row md:space-x-4 md:text-left md:py-52">
+      <div className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:flex-row md:space-x-4 md:items-start md:text-left md:py-52">
         <div className="md:w-1/2 md:mt-2">
           <Image
             className="rounded-full shadow-2xl"
@@ -85,7 +85,7 @@ export const HeroSection = () => {
                 >
                   <textarea
                     rows={1}
-                    className="border shadow flex-grow resize-none overflow-hidden px-2"
+                    className="border shadow flex-grow resize-none overflow-hidden px-2 mx-3 md:mx-0"
                     onChange={(e) => {
                       handleChange(e);
                       autoGrow(e.target);
