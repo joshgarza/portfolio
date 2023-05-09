@@ -72,7 +72,7 @@ export const HeroSection = () => {
           <div className="space-y-4">
             <div className="space-y-4">
               <p className="font-semibold">
-                Want to know more about me? Ask my AI concierge anything {":)"}
+                Want to know more about me? Ask JoshGPT anything {":)"}
               </p>
               <div className="flex flex-row space-x-4">
                 <form
