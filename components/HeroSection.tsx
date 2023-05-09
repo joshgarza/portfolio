@@ -16,6 +16,7 @@ export const HeroSection = () => {
     const data = {
       query: input,
     };
+    console.log("submitting");
     setLoading(true);
     axios
       .post("https://askai-f9ii.onrender.com/ask", data)
@@ -79,7 +80,6 @@ export const HeroSection = () => {
                   className="flex flex-row items-center w-full space-x-4"
                   onSubmit={(e) => {
                     e.preventDefault();
-                    handleSubmit();
                   }}
                 >
                   <textarea
