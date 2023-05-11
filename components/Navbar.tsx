@@ -29,11 +29,11 @@ const Navbar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   const [navbar, setNavbar] = useState(false);
-  // const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <header
@@ -88,18 +88,24 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-              {currentTheme === "dark" ? (
-                <button
-                  onClick={() => setTheme("light")}
-                  className="bg-slate-100 p-2 rounded-xl text-black text-2xl"
-                >
-                  <RiSunLine />
-                </button>
+              {isMounted ? (
+                currentTheme === "dark" ? (
+                  <button
+                    onClick={() => setTheme("light")}
+                    className="bg-slate-100 p-2 rounded-xl text-black text-2xl"
+                  >
+                    <RiSunLine />
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setTheme("dark")}
+                    className="bg-slate-100 p-2 rounded-xl text-2xl"
+                  >
+                    <RiMoonFill />
+                  </button>
+                )
               ) : (
-                <button
-                  onClick={() => setTheme("dark")}
-                  className="bg-slate-100 p-2 rounded-xl text-2xl"
-                >
+                <button className="bg-slate-100 text-white p-2 rounded-xl text-2xl">
                   <RiMoonFill />
                 </button>
               )}
