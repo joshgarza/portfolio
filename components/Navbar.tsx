@@ -105,7 +105,7 @@ const Navbar = () => {
                   </button>
                 )
               ) : (
-                <button className="bg-slate-100 text-white p-2 rounded-xl text-2xl">
+                <button className="bg-slate-100 text-slate-100 p-2 rounded-xl text-2xl">
                   <RiMoonFill />
                 </button>
               )}
