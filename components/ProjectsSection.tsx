@@ -6,34 +6,31 @@ import { SlideUp } from "./SlideUp";
 
 const projects = [
   {
-    name: "Strengthtrainer.app",
+    name: "Robert Half",
     description:
-      "Strengthtrainer.app is a web app that connects strength coaches and their clients, enabling seamless tracking of long-term progress and enhancing the coaching experience.",
-    image: "/strengthtrainer-landscape.png",
+      "Robert Half connects employers & job seekers to staff positions in finance, law, technology & more. Contact a recruiter today to get started.",
+    image: "/rh-homepage.png",
     width: 1000,
     height: 1000,
-    github: "https://github.com/joshgarza/MVP",
-    link: "https://www.strengthtrainer.app/login",
+    link: "https://www.roberthalf.com/us/en",
   },
   {
-    name: "Braking Friendships: Exploding Kittens Online",
+    name: "Big Snacks Little Shop",
     description:
-      "An engaging web application that brings the popular card game Exploding Kittens to the digital realm, providing a fun and interactive online experience for players.",
-    image: "/exploding-kittens.gif",
+      "Natalie Massarany is a San Francisco based textural artist and sculptor who creates rich, three-dimensional plaster sculptures.",
+    image: "/bslswebsite.png",
     width: 1000,
     height: 1000,
-    github: "https://github.com/Braking-Friendships/blueocean",
-    link: null,
+    link: "https://www.bigsnackslittleshop.com/",
   },
   {
-    name: "Atelier Mais",
+    name: "Embodied Guitarist",
     description:
-      "Atelier Mais is a front-end implementation of an eCommerce product page, skillfully designed to meet project stakeholders' specifications and requirements while seamlessly integrating with a client-provided API.",
-    image: "/atelier-mais.png",
+      "A new, innovative approach to guitar playing that enhances your technique, prevents injuries, and promotes effortless music-making.",
+    image: "/embodiedguitarist.png",
     width: 1000,
     height: 1000,
-    github: "https://github.com/joshgarza/Atelier-Mais",
-    link: null,
+    link: "https://www.embodiedguitarist.com/",
   },
 ];
 
@@ -51,10 +48,7 @@ export const ProjectsSection = () => {
               <SlideUp offset="-300px 0px -300px 0px">
                 <div className="flex flex-col animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12">
                   <div className="flex items-center justify-center mt-8 md:w-1/2">
-                    <Link
-                      href={project.link ? project.link : project.github}
-                      target="_blank"
-                    >
+                    <Link href={project.link} target="_blank">
                       <Image
                         src={project.image}
                         alt=""
@@ -65,29 +59,19 @@ export const ProjectsSection = () => {
                     </Link>
                   </div>
                   <div className="mt-12 md:w-1/2">
-                    <h1 className="mx-2 text-4xl font-bold mb-6 md:mx-0">
+                    <h1 className="mx-2 text-4xl font-semibold mb-6 md:mx-0">
                       {project.name}
                     </h1>
                     <p className="mx-2 text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400 md:mx-0">
                       {project.description}
                     </p>
                     <div className="flex flex-row align-bottom space-x-4 mx-2 md:mx-0">
-                      <Link href={project.github} target="_blank">
-                        <BsGithub
+                      <Link href={project.link} target="_blank">
+                        <BsArrowUpRightSquare
                           size={30}
                           className="hover:-translate-y-1 transition-transform cursor-pointer"
                         />
                       </Link>
-                      {project.link ? (
-                        <Link href={project.link} target="_blank">
-                          <BsArrowUpRightSquare
-                            size={30}
-                            className="hover:-translate-y-1 transition-transform cursor-pointer"
-                          />
-                        </Link>
-                      ) : (
-                        <></>
-                      )}
                     </div>
                   </div>
                 </div>

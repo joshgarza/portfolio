@@ -19,8 +19,8 @@ export const HeroSection = () => {
     console.log("submitting");
     setLoading(true);
     axios
-      // .post("http://127.0.0.1:5000/ask", data)
-      .post("https://askai-f9ii.onrender.com/ask", data)
+      .post("http://127.0.0.1:5000/ask", data)
+      // .post("https://askai-f9ii.onrender.com/ask", data)
       .then((res) => {
         setResponse(res.data.response);
         setLoading(false);
@@ -50,17 +50,17 @@ export const HeroSection = () => {
 
   return (
     <section id="home">
-      <div className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:flex-row md:space-x-4 md:items-start md:text-left md:py-52">
-        <div className="md:w-1/2 md:mt-2">
+      <div className="flex flex-col text-center items-center justify-center my-10 py-16 sm:py-32 md:flex-row md:space-x-4 md:items-stretch md:py-52">
+        <div className="md:w-1/2 flex flex-col justify-center">
           <Image
-            className="rounded-full shadow-2xl"
+            className="rounded-full shadow-2xl self-center"
             src="/headshot.png"
             alt="josh garza profile picture"
             width={300}
             height={300}
           />
         </div>
-        <div className="md:w-3/5 md:mt-2">
+        <div className="md:w-3/5 flex flex-col justify-center">
           <h1 className="font-bold text-4xl mt-6 md:text-7xl md:mt-0">
             {"Hi, I'm Josh!"}
           </h1>
@@ -71,38 +71,6 @@ export const HeroSection = () => {
             </span>
             {"based in the San Francisco Bay Area in California."}
           </p>
-          <div className="space-y-4">
-            <div className="space-y-4">
-              <p className="font-semibold">
-                Want to know more about me? Ask JoshGPT anything {":)"}
-              </p>
-              <div className="flex flex-row space-x-4">
-                <form
-                  className="flex flex-row items-center w-full space-x-4"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                  }}
-                >
-                  <textarea
-                    rows={1}
-                    className="border shadow flex-grow resize-none overflow-hidden px-2 mx-3 md:mx-0"
-                    onChange={(e) => {
-                      handleChange(e);
-                      autoGrow(e.target);
-                    }}
-                    onKeyDown={(e) => handleKeyDown(e)}
-                  ></textarea>
-
-                  <button onClick={handleSubmit}>
-                    {<AiOutlineSend size={30} />}
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div className="">
-              <span>{loading ? <LoadingSpinner /> : response}</span>
-            </div>
-          </div>
         </div>
       </div>
       <div className="flex flex-row justify-center">
