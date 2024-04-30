@@ -3,7 +3,7 @@ import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 
 export const Footer = () => {
   return (
-    <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
+    <footer className="mx-auto px-4 sm:px-6">
       <hr className="w-full h-0.5 mx-auto mt-20 bg-neutral-200 border-0"></hr>
       <div className="mx-auto p-4 flex flex-col text-center text-neutral-900 space-y-2 md:flex-row md:justify-between md:space-y-0">
         <div className="text-neutral-500 dark:text-neutral-100">
