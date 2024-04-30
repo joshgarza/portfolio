@@ -51,7 +51,7 @@ const Navbar = () => {
               offset={-100}
               duration={500}
             >
-              <div className="py-5 md:block">
+              <div className="py-5 md:block cursor-pointer">
                 <h2 className="text-2xl font-bold">Josh Garza</h2>
               </div>
             </Link>

@@ -12,12 +12,8 @@ const skills = [
   { skill: "Express" },
   { skill: "Postgres" },
   { skill: "Git" },
-  { skill: "GitHub" },
   { skill: "Cloudflare" },
-  { skill: "AWS: Lambda" },
-  { skill: "AWS: S3" },
-  { skill: "AWS: RDS" },
-  { skill: "AWS: EC2" },
+  { skill: "AWS" },
   { skill: "Vercel" },
 ];
 
@@ -44,17 +40,19 @@ export const AboutSection = () => {
             </p>
             <br />
             <p>
-              I graduated from Hack Reactor in December 2022 and have a
-              background in music and fitness, having studied classical guitar
-              at the San Francisco Conservatory of Music and owned a successful
-              gym in San Francisco.
+              I&#39;ve worked as a consultant in the tech industry since 2022. I
+              have a background in music and fitness, having studied classical
+              guitar at the San Francisco Conservatory of Music and owned San
+              Francisco&#39;s first Powerlifting and Weightlifting focused gym,
+              SF Iron.
             </p>
             <br />
             <p>
               My diverse interests have led me to excel in various fields. From
-              playing classical guitar, managing a gym, and powerlifting, to
-              building full-stack web applications, I am always eager to explore
-              new experiences and continually learn and grow.
+              playing classical guitar, managing a gym, and powerlifting - to
+              building scalable and performant applications and business
+              practices. I am always eager to explore new experiences and
+              continually learn and grow.
             </p>
             <br />
             <p>
