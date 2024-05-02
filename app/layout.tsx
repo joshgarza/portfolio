@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/react";
 
 interface RootLayoutProps {
   children: React.ReactNode;
