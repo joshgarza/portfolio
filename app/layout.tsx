@@ -22,6 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Navbar />
           {children}
           <Footer />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
